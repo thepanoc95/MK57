@@ -1553,6 +1553,205 @@ NoConn ~ 3275 10700
 
 
 NoConn ~ 1875 1750
+# --- Composite Video RCA Output (VIA PA0-PA5 -> Resistor DAC) ---
+$Comp
+L Device:R R22
+U 1 1 9255357C
+P 5000 9000
+F 0 "R22" V 5080 9000 50  0000 C CNN
+F 1 "1k" V 5000 9000 50  0000 C CNN
+F 2 "Resistors_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 4930 9000 50  0001 C CNN
+F 3 "" H 5000 9000 50  0001 C CNN
+	1    5000 9000
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R R23
+U 1 1 25E1AA8F
+P 5000 9150
+F 0 "R23" V 5080 9150 50  0000 C CNN
+F 1 "2k" V 5000 9150 50  0000 C CNN
+F 2 "Resistors_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 4930 9150 50  0001 C CNN
+F 3 "" H 5000 9150 50  0001 C CNN
+	1    5000 9150
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R R24
+U 1 1 ADE8DC4B
+P 5000 9300
+F 0 "R24" V 5080 9300 50  0000 C CNN
+F 1 "4.7k" V 5000 9300 50  0000 C CNN
+F 2 "Resistors_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 4930 9300 50  0001 C CNN
+F 3 "" H 5000 9300 50  0001 C CNN
+	1    5000 9300
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R R25
+U 1 1 668D00AB
+P 5000 9450
+F 0 "R25" V 5080 9450 50  0000 C CNN
+F 1 "10k" V 5000 9450 50  0000 C CNN
+F 2 "Resistors_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 4930 9450 50  0001 C CNN
+F 3 "" H 5000 9450 50  0001 C CNN
+	1    5000 9450
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R R26
+U 1 1 0E26AE7C
+P 5000 9600
+F 0 "R26" V 5080 9600 50  0000 C CNN
+F 1 "22k" V 5000 9600 50  0000 C CNN
+F 2 "Resistors_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 4930 9600 50  0001 C CNN
+F 3 "" H 5000 9600 50  0001 C CNN
+	1    5000 9600
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R R27
+U 1 1 FA9F5F78
+P 5000 9750
+F 0 "R27" V 5080 9750 50  0000 C CNN
+F 1 "47k" V 5000 9750 50  0000 C CNN
+F 2 "Resistors_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 4930 9750 50  0001 C CNN
+F 3 "" H 5000 9750 50  0001 C CNN
+	1    5000 9750
+	0    1    1    0   
+$EndComp
+$Comp
+L conn:Conn_01x02 J5
+U 1 1 B4B321D2
+P 6050 9400
+F 0 "J5" H 6050 9625 50  0000 C CNN
+F 1 "RCA_VIDEO" H 6050 9125 50  0000 C CNN
+F 2 "Connector:RCA_PJRA3x2_SMD" H 6050 9400 50  0001 C CNN
+F 3 "" H 6050 9400 50  0001 C CNN
+	1    6050 9400
+	1    0    0    0   
+$EndComp
+$Comp
+L power:GND #PWR032
+U 1 1 ACA60869
+P 5850 9350
+F 0 "#PWR032" H 5850 9100 50  0001 C CNN
+F 1 "GND" H 5850 9200 50  0000 C CNN
+F 2 "" H 5850 9350 50  0001 C CNN
+F 3 "" H 5850 9350 50  0001 C CNN
+	1    5850 9350
+	1    0    0    -1  
+$EndComp
+Text Label 4050 9000 0    60   ~ 0
+PA0
+Text Label 4050 9150 0    60   ~ 0
+PA1
+Text Label 4050 9300 0    60   ~ 0
+PA2
+Text Label 4050 9450 0    60   ~ 0
+PA3
+Text Label 4050 9600 0    60   ~ 0
+PA4
+Text Label 4050 9750 0    60   ~ 0
+PA5
+Wire Wire Line 4050 9000 4850 9000
+Wire Wire Line 4050 9150 4850 9150
+Wire Wire Line 4050 9300 4850 9300
+Wire Wire Line 4050 9450 4850 9450
+Wire Wire Line 4050 9600 4850 9600
+Wire Wire Line 4050 9750 4850 9750
+Wire Wire Line 5150 9000 5800 9000
+Wire Wire Line 5150 9150 5800 9150
+Wire Wire Line 5150 9300 5800 9300
+Wire Wire Line 5150 9450 5800 9450
+Wire Wire Line 5150 9600 5800 9600
+Wire Wire Line 5150 9750 5800 9750
+Wire Wire Line 5800 9000 5800 9750
+Connection ~ 5800 9000
+Connection ~ 5800 9150
+Connection ~ 5800 9300
+Connection ~ 5800 9450
+Connection ~ 5800 9600
+Connection ~ 5800 9750
+Wire Wire Line 5800 9450 5850 9450
+# --- PS/2 Keyboard Port (VIA PA6=DATA, PA7=CLOCK -> mini-DIN) ---
+$Comp
+L conn:Conn_01x06 J6
+U 1 1 3005B9C2
+P 6050 10300
+F 0 "J6" H 6050 10600 50  0000 C CNN
+F 1 "PS2_KEYBOARD" H 6050 9975 50  0000 C CNN
+F 2 "Connector:PS2-6P" H 6050 10300 50  0001 C CNN
+F 3 "" H 6050 10300 50  0001 C CNN
+	1    6050 10300
+	1    0    0    0   
+$EndComp
+$Comp
+L Device:R R28
+U 1 1 773A6297
+P 5500 10500
+F 0 "R28" V 5580 10500 50  0000 C CNN
+F 1 "4.7k" V 5500 10500 50  0000 C CNN
+F 2 "Resistors_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 5430 10500 50  0001 C CNN
+F 3 "" H 5500 10500 50  0001 C CNN
+	1    5500 10500
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R R29
+U 1 1 E0A8B335
+P 5500 10100
+F 0 "R29" V 5580 10100 50  0000 C CNN
+F 1 "4.7k" V 5500 10100 50  0000 C CNN
+F 2 "Resistors_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 5430 10100 50  0001 C CNN
+F 3 "" H 5500 10100 50  0001 C CNN
+	1    5500 10100
+	0    1    1    0   
+$EndComp
+$Comp
+L power:VCC #PWR033
+U 1 1 9CEDBA49
+P 5600 10400
+F 0 "#PWR033" H 5600 10250 50  0001 C CNN
+F 1 "VCC" H 5600 10550 50  0000 C CNN
+F 2 "" H 5600 10400 50  0001 C CNN
+F 3 "" H 5600 10400 50  0001 C CNN
+	1    5600 10400
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR034
+U 1 1 290EDEB8
+P 5850 10300
+F 0 "#PWR034" H 5850 10050 50  0001 C CNN
+F 1 "GND" H 5850 10150 50  0000 C CNN
+F 2 "" H 5850 10300 50  0001 C CNN
+F 3 "" H 5850 10300 50  0001 C CNN
+	1    5850 10300
+	1    0    0    -1  
+$EndComp
+Text Label 4050 9900 0    60   ~ 0
+PA6
+Text Label 4050 10200 0    60   ~ 0
+PA7
+Wire Wire Line 4050 9900 5000 9900
+Wire Wire Line 4050 10200 5050 10200
+Wire Wire Line 5000 9900 5000 10500
+Wire Wire Line 5050 10200 5050 10100
+Wire Wire Line 5000 10500 5850 10500
+Wire Wire Line 5050 10100 5850 10100
+Wire Wire Line 5600 10400 5650 10400
+Wire Wire Line 5650 10400 5650 10500
+Wire Wire Line 5650 10400 5650 10100
+Wire Wire Line 5600 10400 5600 10200
+Wire Wire Line 5600 10200 5850 10200
+Connection ~ 5650 10400
+Connection ~ 5600 10400
+Connection ~ 5850 10500
+NoConn ~ 5850 10400
+NoConn ~ 5850 10000
+
+
 Text Notes 11825 10250 0    60   ~ 0
 This is a PCB version of the 6502 computer featured in Ben Eaters "Build a 6502\ncomputer" series of videos. Based on the schematics on his website, at the \nrelease of part 7 of his series.
 $Comp
